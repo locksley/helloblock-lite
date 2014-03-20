@@ -8,15 +8,23 @@ module HelloBlock::Request
     # ensure / at end of endpoint
     response = HTTParty.post("#{BASE}#{endpoint}", body: body.to_query)
 
-    raise Error unless response.code === 200
-    return response
+    # TODO: Better Handling
+    if response.code !== 200
+      p response.body
+      raise Error
+    end
+    return response["data"]
   end
 
   def get(endpoint, query: {})
     response = HTTParty.get("#{BASE}#{endpoint}", query: query)
 
-    raise Error unless response.code === 200
-    return response
+    # TODO: Better Handling
+    if response.code !== 200
+      p response.body
+      raise Error
+    end
+    return response["data"]
   end
 
 end
