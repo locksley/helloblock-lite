@@ -9,7 +9,7 @@ module HelloBlock::Request
     response = HTTParty.post("#{BASE}#{endpoint}", body: body.to_query)
 
     # TODO: Better Handling
-    if response.code !== 200
+    if response.code != 200
       p response.body
       raise Error
     end
@@ -20,7 +20,7 @@ module HelloBlock::Request
     response = HTTParty.get("#{BASE}#{endpoint}", query: query)
 
     # TODO: Better Handling
-    if response.code !== 200
+    if response.code != 200
       p response.body
       raise Error
     end

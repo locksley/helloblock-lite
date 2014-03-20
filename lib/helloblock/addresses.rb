@@ -22,7 +22,7 @@ module HelloBlock::Addresses
     extend self
 
     def get(queries = {})
-      res = HelloBlock::Request.get("#{RESOURCE}", query: queries
+      res = HelloBlock::Request.get("#{RESOURCE}", query: queries)
       res["addresses"]
     end
 

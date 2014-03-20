@@ -5,7 +5,7 @@ module HelloBlock::Faucet
 
   def unspents(queries = {})
     res = HelloBlock::Request.get("#{RESOURCE}", query: queries)
-    res["address"]
+    res
   end
 
   def withdrawal(queries = {})
