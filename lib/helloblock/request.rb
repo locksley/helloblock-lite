@@ -11,8 +11,9 @@ module HelloBlock::Request
 
     # TODO: Better Handling
     if response.code != 200
-      p response.body
-      raise Error
+      body = JSON.parse(response.body)
+      p body
+      raise "#{body["message"]}"
     end
     return response["data"]
   end
@@ -22,8 +23,9 @@ module HelloBlock::Request
 
     # TODO: Better Handling
     if response.code != 200
-      p response.body
-      raise Error
+      body = JSON.parse(response.body)
+      p body
+      raise "#{body["message"]}"
     end
     return response["data"]
   end
