@@ -10,7 +10,7 @@ module HelloBlock::Faucet
 
   def withdrawal(queries = {})
     res = HelloBlock::Request.post("#{RESOURCE}", body: queries)
-    res["transaction"]
+    res
   end
 
 end

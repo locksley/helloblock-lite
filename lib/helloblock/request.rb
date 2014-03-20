@@ -7,7 +7,7 @@ module HelloBlock::Request
 
   def post(endpoint, body: {})
     # ensure / at end of endpoint
-    response = HTTParty.post("#{base()}#{endpoint}", body: body.to_query)
+    response = HTTParty.post("#{base()}#{endpoint}", body: body)
 
     # TODO: Better Handling
     if response.code != 200
