@@ -8,20 +8,16 @@ module HelloBlock::Transactions
     res["transaction"]
   end
 
-  def propagate(raw_tx_hex)
-    res = HelloBlock::Request.post("#{RESOURCE}", body: {
-      rawTxHex: raw_tx_hex
-    })
+  def propagate(body = {})
+    res = HelloBlock::Request.post("#{RESOURCE}", body: body)
     res["transaction"]
   end
 
   module Batch
     extend self
 
-    def get(tx_hashes: nil)
-      res = HelloBlock::Request.get("#{RESOURCE}", query: {
-        tx_hashes: tx_hashes
-      })
+    def get(queries = {})
+      res = HelloBlock::Request.get("#{RESOURCE}", query: queries)
       res["transactions"]
     end
 

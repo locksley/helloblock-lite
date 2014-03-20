@@ -3,18 +3,13 @@ module HelloBlock::Faucet
 
   RESOURCE = "/faucet"
 
-  def unspents(type: 1)
-    res = HelloBlock::Request.get("#{RESOURCE}", query: {
-      type: type
-    })
+  def unspents(queries = {})
+    res = HelloBlock::Request.get("#{RESOURCE}", query: queries)
     res["address"]
   end
 
-  def withdrawal(to_address: nil, value: nil)
-    res = HelloBlock::Request.post("#{RESOURCE}", body: {
-      toAddress: to_address,
-      value: value
-    })
+  def withdrawal(queries = {})
+    res = HelloBlock::Request.post("#{RESOURCE}", body: queries)
     res["transaction"]
   end
 
