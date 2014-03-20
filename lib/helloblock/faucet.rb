@@ -8,8 +8,8 @@ module HelloBlock::Faucet
     res
   end
 
-  def withdrawal(queries = {})
-    res = HelloBlock::Request.post("#{RESOURCE}", body: queries)
+  def withdrawal(body = {})
+    res = HelloBlock::Request.post("#{RESOURCE}/withdrawal", body: body)
     res
   end
 

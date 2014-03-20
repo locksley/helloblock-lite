@@ -9,7 +9,6 @@ module HelloBlock::Request
     # ensure / at end of endpoint
     response = HTTParty.post("#{base()}#{endpoint}", body: body)
 
-    # TODO: Better Handling
     if response.code != 200
       body = JSON.parse(response.body)
       p body
@@ -21,7 +20,6 @@ module HelloBlock::Request
   def get(endpoint, query: {})
     response = HTTParty.get("#{base()}#{endpoint}", query: query)
 
-    # TODO: Better Handling
     if response.code != 200
       body = JSON.parse(response.body)
       p body

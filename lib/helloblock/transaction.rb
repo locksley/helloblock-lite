@@ -8,6 +8,11 @@ module HelloBlock::Transaction
     res["transaction"]
   end
 
+  def get_latest(queries = {})
+    res = HelloBlock::Request.get("#{RESOURCE}/latest")
+    res["transactions"]
+  end
+
   def propagate(body = {})
     res = HelloBlock::Request.post("#{RESOURCE}", body: body)
     res["transaction"]
