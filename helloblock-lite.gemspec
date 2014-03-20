@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Scott Li"]
   spec.email         = ["scottli0101@gmail.com"]
   spec.summary       = %q{Lightweight client}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.description   = %q{Lightweight client for Helloblock API}
+  spec.homepage      = "https://github.com/locksley/helloblock-lite"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
