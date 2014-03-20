@@ -33,9 +33,9 @@ module HelloBlock
 end
 
 require 'helloblock/request'
-require 'helloblock/addresses'
-require 'helloblock/blocks'
+require 'helloblock/address'
+require 'helloblock/block'
 require 'helloblock/faucet'
 require 'helloblock/rpc'
-require 'helloblock/transactions'
+require 'helloblock/transaction'
 require 'helloblock/wallet'

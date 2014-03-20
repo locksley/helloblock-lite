@@ -1,4 +1,4 @@
-module HelloBlock::Addresses
+module HelloBlock::Address
   extend self
 
   RESOURCE = "/addresses"

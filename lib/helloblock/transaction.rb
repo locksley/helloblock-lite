@@ -1,4 +1,4 @@
-module HelloBlock::Transactions
+module HelloBlock::Transaction
   extend self
 
   RESOURCE = "/transactions"
