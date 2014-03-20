@@ -1,12 +1,13 @@
 module HelloBlock::Request
   extend self
 
-  BASE = "https://#{HelloBlock.network}.helloblock.io/#{HelloBlock.version}"
-  PRC = "https://#{HelloBlock.network}.helloblock.io/q"
+  def base
+    "https://#{HelloBlock.network}.helloblock.io/#{HelloBlock.version}"
+  end
 
   def post(endpoint, body: {})
     # ensure / at end of endpoint
-    response = HTTParty.post("#{BASE}#{endpoint}", body: body.to_query)
+    response = HTTParty.post("#{base()}#{endpoint}", body: body.to_query)
 
     # TODO: Better Handling
     if response.code != 200
@@ -17,7 +18,7 @@ module HelloBlock::Request
   end
 
   def get(endpoint, query: {})
-    response = HTTParty.get("#{BASE}#{endpoint}", query: query)
+    response = HTTParty.get("#{base()}#{endpoint}", query: query)
 
     # TODO: Better Handling
     if response.code != 200
